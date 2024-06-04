@@ -1,4 +1,6 @@
+import { Link, Outlet, createBrowserRouter } from 'react-router-dom';
 import Search from './components/Search';
+import SideBar from './components/SideBar';
 
 const App = () => {
   return (
@@ -8,7 +10,7 @@ const App = () => {
           <div className="relative flex justify-between xl:grid xl:grid-cols-12 lg:gap-8">
             <div className="flex md:absolute md:left-0 md:inset-y-0 lg:static xl:col-span-2">
               <div className="flex-shrink-0 flex items-center">
-                <a href="#">MovieDB</a>
+                <Link to="/" className='text-slate-800 text-xl'>MovieDB</Link>
               </div>
             </div>
             <div className="min-w-0 flex-1 md:px-8 lg:px-0 xl:col-span-6">
@@ -21,15 +23,8 @@ const App = () => {
       </header>
       <div className="py-10">
         <div className="max-w-3xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-12 lg:gap-8">
-          <div className="hidden lg:block lg:col-span-3 xl:col-span-2">
-            <nav
-              aria-label="Sidebar"
-              className="sticky top-4 divide-y divide-gray-300"
-            >
-              <div className="pb-8 space-y-1">{/* navigation */}</div>
-            </nav>
-          </div>
-          <main className="lg:col-span-9">{/* routing */}</main>
+          <SideBar />
+          <main className="lg:col-span-9"><Outlet /></main>
         </div>
       </div>
     </div>
