@@ -14,6 +14,7 @@ import {
   favoriteSchema,
 } from "../schemas/favorites";
 import { movieKeys } from "./movieQueries";
+import { MovieType } from "../schemas/movie";
 
 export const favoriteKeys = {
   favorite: (id: string) => ["favorite", { id }] as const,
@@ -92,7 +93,7 @@ export const useMutateFavorite = () => {
       data,
     }: {
       id: string,
-      data: any,
+      data: MovieType,
     }) => {
       await setItem(id, data);
       invalidateAllFavorites(queryClient, id);

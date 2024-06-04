@@ -19,7 +19,7 @@ const BaseMovieCard: FunctionComponent<{children?: ReactNode, movie: SearchMovie
         <img
           className="h-48 mx-auto mt-4"
           loading="lazy"
-          src={`${movie.Poster}`}
+          src={`${movie.Poster.replace('http://', 'https://')}`}
         />
         <div className="p-4">
           <h3 className="mt-6 text-gray-900 text-sm font-medium">

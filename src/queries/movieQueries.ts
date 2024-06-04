@@ -2,7 +2,7 @@ import * as v from "valibot";
 import { QueryFunctionContext, useQuery } from "@tanstack/react-query";
 import { movieSchema, searchMoviesSchema } from "../schemas/movie";
 
-const OMDB_BASE_QUERY_URL = `http://omdbapi.com?apikey=${
+const OMDB_BASE_QUERY_URL = `https://omdbapi.com?apikey=${
   import.meta.env.VITE_OMDB_API_KEY
 }`;
 
